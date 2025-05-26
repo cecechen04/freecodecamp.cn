@@ -21,7 +21,8 @@
     "lint-json": "npm run lint-server && npm run lint-challenges && npm run lint-resources && npm run lint-utils",
     "test-challenges": "babel-node seed/test-challenges.js | tap-spec",
     "pretest": "npm run lint",
-    "test": "npm run test-challenges"
+    "test": "npm run test-challenges",
+    "test-redos": "mocha test/commonFramework/bindings.test.js"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
