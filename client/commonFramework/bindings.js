@@ -21,10 +21,6 @@ window.common = (function(global) {
   };
 
   common.init.push(function($) {
-      /**
-   * 安全替代 `.replace(/#+$/, '')`，用于去除 URL 或字符串末尾多余的 #
-   * 线性处理，无正则回溯风险，适用于高安全要求场景
-   */
     function stripTrailingHashes(url) {
       let i = url.length - 1;
       while (i >= 0 && url[i] === '#') i--;
