@@ -110,7 +110,10 @@ window.common = (function(global) {
       if (history && typeof history.replaceState === 'function') {
         // grab the url up to the query
         // destroy any hash symbols still clinging to life
-        const url = (location.href.split('?')[0]).replace(/(#*)$/, '');
+        const href = location.href.split('?')[0];
+        let i = href.length - 1;
+        while (i >= 0 && href[i] === '#') i--;
+        const url = href.slice(0, i + 1);
         history.replaceState(
           history.state,
           null,
