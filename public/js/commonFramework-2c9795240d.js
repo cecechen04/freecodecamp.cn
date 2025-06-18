@@ -51,13 +51,13 @@ window.common = function(e) {
     }
     ,
     a.replaceFormActionAttr = function(e) {
-        return e.replace(/<form[^>]*>/, function(e) {
+        return e.replace(/<form(?!<form)[^>]*>/, function(e) {
             return e.replace(/action(\s*?)=/, "fccfaa$1=")
         })
     }
     ,
     a.replaceFccfaaAttr = function(e) {
-        return e.replace(/<form[^>]*>/, function(e) {
+        return e.replace(/<form(?!<form)[^>]*>/, function(e) {
             return e.replace(/fccfaa(\s*?)=/, "action$1=")
         })
     }
